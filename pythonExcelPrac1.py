@@ -35,6 +35,5 @@ ws.Range("2:2").RowHeight = 60
 excel.Application.Run("macro1")
 
 # excel.SaveAs(r'C:\python\pythonExcel\test1.xlsx')
-# wb.Close(savechanges=1)
 wb.Save()
 excel.Quit()
