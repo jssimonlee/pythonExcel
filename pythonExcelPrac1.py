@@ -1,4 +1,8 @@
 import win32com.client
+import pythoncom
+
+# 서브 스레드에서 COM 객체를 사용하려면 COM 라이브러리를 초기화 해야함
+pythoncom.CoInitialize()
 
 excel = win32com.client.Dispatch("Excel.Application")
 excel.Visible = True
@@ -38,3 +42,6 @@ excel.Application.Run("macro1")
 wb.Save()
 # wb.Close(SaveChanges=False)
 excel.Quit()
+
+# 사용 후 uninitialize
+pythoncom.CoUninitialize()
